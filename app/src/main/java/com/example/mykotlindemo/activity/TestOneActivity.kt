@@ -3,8 +3,8 @@ package com.example.mykotlindemo.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mykotlindemo.R
+import com.example.mykotlindemo.utils.TAG
 
-const val TAG = "test_kt"
 class TestOneActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +16,7 @@ class TestOneActivity : AppCompatActivity() {
     }
 
     private fun print(msg:String){
-        println(com.example.mykotlindemo.TAG + msg)
+        println(TAG + msg)
     }
 
     private fun testParams(str:String,num :Int =1, isTrue : Boolean = false){
