@@ -1,13 +1,16 @@
 package com.example.mykotlindemo.utils
 
+import com.example.mykotlindemo.utils.Constants.TAG
 
-const val TAG = "test_kt : "
 class Utils {
 
 
-    fun print(msg:String){
-        println(TAG + msg)
+    companion object{
+        fun print(msg:String){
+            println(TAG + msg)
+        }
     }
+
 
 
 }
