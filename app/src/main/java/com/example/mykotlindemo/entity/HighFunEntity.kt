@@ -13,7 +13,7 @@ fun main() {
     }
 
 
-    "zhenzhen".derry()
+//    "zhenzhen".derry()
 }
 
 private fun login(username:String,password:String,/*第三个参数是函数  声明 参数Boolean 返回空*/ responseResult: (Boolean)->Unit ){
