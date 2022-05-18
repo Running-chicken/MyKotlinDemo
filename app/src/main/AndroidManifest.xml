@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyKotlinDemo">
         <activity
-            android:name=".activity.ClassFunActivity"
+            android:name=".activity.ListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LambdaActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ClassActivity"

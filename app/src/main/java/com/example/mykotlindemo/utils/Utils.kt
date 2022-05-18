@@ -9,6 +9,10 @@ class Utils {
         fun print(msg:String){
             println(TAG + msg)
         }
+
+        fun print(any: Any){
+            println(TAG + any)
+        }
     }
 
 

@@ -1,9 +1,15 @@
 package com.example.mykotlindemo
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.View.OnClickListener
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.launcher.ARouter
+import com.example.mykotlindemo.activity.LambdaActivity
+import com.example.mykotlindemo.activity.ListActivity
 import com.example.mykotlindemo.databinding.ActivityMainBinding
 import com.example.mykotlindemo.utils.RouterPath
 
@@ -36,6 +42,22 @@ class MainActivity : AppCompatActivity() {
         mBinding.tvClass.setOnClickListener {
             ARouter.getInstance().build(RouterPath.Test.TEST_CLASS).navigation()
         }
+
+        mBinding.tvLambda.setOnClickListener(object : OnClickListener{
+            override fun onClick(p0: View?) {
+                var intent = Intent()
+                intent.setClass(this@MainActivity,LambdaActivity::class.java)
+                startActivity(intent)
+            }
+        })
+
+        mBinding.tvList.setOnClickListener(object : OnClickListener{
+            override fun onClick(p0: View?) {
+                var intent = Intent();
+                intent.setClass(this@MainActivity,ListActivity::class.java)
+                startActivity(intent)
+            }
+        })
     }
 
 

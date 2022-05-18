@@ -22,7 +22,9 @@ class FunctionActivity : AppCompatActivity() {
 //        testStringSubString()
 //        testStringReplace()
 //        testStringSplit()
-        testStringCount()
+//        testStringCount()
+//        testMap()
+        highFun()
     }
 
 
@@ -81,5 +83,21 @@ class FunctionActivity : AppCompatActivity() {
 
     private fun testStringCount(){
         Utils.print("字符出现次数: ${str.count { it == 'o' }}")
+    }
+
+    private fun testMap(){
+        var map = mapOf("key1" to "value1","key2" to "value2","key3" to "value3")
+        map.forEach{
+                (key, value) -> Utils.print("map参数： $key  $value")
+        }
+        map.forEach{
+                (_, value) -> Utils.print("map参数  $value")
+        }
+    }
+
+    private fun highFun(){
+        val str = "abc"
+        val sum = str.sumBy { it.toInt() }
+        Utils.print("$sum")
     }
 }

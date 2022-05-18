@@ -55,6 +55,8 @@ class ClassActivity : AppCompatActivity() {
                 Utils.print(str)
             }
         })
+
+
         demoInner.testOnClick()
     }
 

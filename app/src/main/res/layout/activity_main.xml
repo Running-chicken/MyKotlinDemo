@@ -52,5 +52,21 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_function" />
 
+        <TextView
+            android:id="@+id/tv_lambda"
+            style="@style/TextStyle"
+            android:text="lambda"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_class" />
+
+        <TextView
+            android:id="@+id/tv_list"
+            style="@style/TextStyle"
+            android:text="list"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_lambda" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
