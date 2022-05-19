@@ -58,6 +58,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
+
+        mBinding.tvVp.setOnClickListener{
+            ARouter.getInstance().build(RouterPath.Technology.TECH_VP).navigation()
+        }
+
     }
 
 

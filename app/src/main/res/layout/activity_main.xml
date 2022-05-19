@@ -68,5 +68,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_lambda" />
 
+        <TextView
+            android:id="@+id/tv_vp"
+            style="@style/TextStyle"
+            android:text="viewpager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_list" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

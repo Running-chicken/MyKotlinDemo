@@ -14,4 +14,8 @@ object RouterPath {
         const val TEST_CLASS = "/test/class"
     }
 
+    object Technology{
+        const val TECH_VP = "/tech/vp"
+    }
+
 }

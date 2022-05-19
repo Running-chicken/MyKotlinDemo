@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/purple_500"
+                    app:layout_collapseMode="pin"/>
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="pin"
+                    android:background="@color/white"
+                    android:layout_gravity="bottom">
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tb_vp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        style="@style/TabStyle"
+                        app:tabTextColor="@color/black"
+                        app:tabSelectedTextColor="@color/purple_500"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabIndicatorColor="@color/teal_700"/>
+                </androidx.appcompat.widget.Toolbar>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:fillViewport="true">
+            <com.example.mykotlindemo.view.MyViewPager
+                android:id="@+id/vp_demo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>
