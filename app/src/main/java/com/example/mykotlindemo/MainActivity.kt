@@ -1,13 +1,14 @@
 package com.example.mykotlindemo
 
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.launcher.ARouter
+import com.example.mykotlindemo.activity.ContentProviderActivity
 import com.example.mykotlindemo.activity.LambdaActivity
 import com.example.mykotlindemo.activity.ListActivity
 import com.example.mykotlindemo.databinding.ActivityMainBinding
@@ -63,6 +64,17 @@ class MainActivity : AppCompatActivity() {
             ARouter.getInstance().build(RouterPath.Technology.TECH_VP).navigation()
         }
 
+        mBinding.tvBroadcastReceiver.setOnClickListener{
+            val intent = Intent("com.cc.me.broadcast")
+            intent.putExtra("params", "im kt demo")
+            intent.component = ComponentName("com.cc.skillapp", "com.cc.skillapp.receive.MyBroadReceive")
+            sendBroadcast(intent)
+        }
+
+        mBinding.tvContentProvider.setOnClickListener {
+            var intent = Intent(this,ContentProviderActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
