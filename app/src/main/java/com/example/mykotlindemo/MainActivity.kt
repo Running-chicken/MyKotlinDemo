@@ -13,6 +13,7 @@ import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.launcher.ARouter
+import com.cc.skillapp.test.aidl.IMyAidlInterface
 import com.example.mykotlindemo.activity.ContentProviderActivity
 import com.example.mykotlindemo.activity.LambdaActivity
 import com.example.mykotlindemo.activity.ListActivity
@@ -87,8 +88,30 @@ class MainActivity : AppCompatActivity() {
             intent.component = ComponentName("com.cc.skillapp","com.cc.skillapp.test.binder.BinderService");
             bindService(intent,conn, BIND_AUTO_CREATE)
         }
+
+        mBinding.tvBinderAidl.setOnClickListener {
+            var intent = Intent()
+//            intent.setAction("com.cc.skillapp.test.aidl.IMyAidlInterface");
+            intent.component = ComponentName("com.cc.skillapp","com.cc.skillapp.test.aidl.AidlService")
+            bindService(intent,connAidl, BIND_AUTO_CREATE)
+        }
     }
 
+
+    lateinit var myAidlInterface : IMyAidlInterface
+
+
+    var connAidl = object:ServiceConnection{
+        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+            myAidlInterface = IMyAidlInterface.Stub.asInterface(service)
+            myAidlInterface.helloActivity("this is cuican aidl")
+        }
+
+        override fun onServiceDisconnected(name: ComponentName?) {
+            TODO("Not yet implemented")
+        }
+
+    }
 
 
 

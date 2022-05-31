@@ -100,5 +100,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_content_provider" />
 
+        <TextView
+            android:id="@+id/tv_binder_aidl"
+            style="@style/TextStyle"
+            android:text="aidl 安卓接口定义语言"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_binder" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
