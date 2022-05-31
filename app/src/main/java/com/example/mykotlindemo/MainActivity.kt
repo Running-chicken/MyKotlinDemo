@@ -13,7 +13,7 @@ import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.launcher.ARouter
-import com.cc.skillapp.test.aidl.IMyAidlInterface
+import com.cc.skillapp.IAidlInterface
 import com.example.mykotlindemo.activity.ContentProviderActivity
 import com.example.mykotlindemo.activity.LambdaActivity
 import com.example.mykotlindemo.activity.ListActivity
@@ -98,13 +98,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    lateinit var myAidlInterface : IMyAidlInterface
+    lateinit var myAidlInterface : IAidlInterface
 
 
     var connAidl = object:ServiceConnection{
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            myAidlInterface = IMyAidlInterface.Stub.asInterface(service)
-            myAidlInterface.helloActivity("this is cuican aidl")
+            myAidlInterface = IAidlInterface.Stub.asInterface(service)
+            Utils.print("结果是 ${myAidlInterface.add(100,200)}")
+
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
@@ -124,6 +125,8 @@ class MainActivity : AppCompatActivity() {
             data.writeInt(1111)
             data.writeInt(2223)
 
+            data.writeInterfaceToken("com.cc.skill.addbinder")
+
             try {
                 service?.transact(FIRST_CALL_TRANSACTION, data, reply, 0)
                 result = reply.readInt()
@@ -134,6 +137,9 @@ class MainActivity : AppCompatActivity() {
                 reply.recycle()
             }
             Utils.print("得到了：$result")
+
+
+
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
