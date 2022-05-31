@@ -92,5 +92,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_broadcast_receiver" />
 
+        <TextView
+            android:id="@+id/tv_binder"
+            style="@style/TextStyle"
+            android:text="跨进程通信"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content_provider" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
