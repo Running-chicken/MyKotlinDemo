@@ -108,5 +108,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_binder" />
 
+        <TextView
+            android:id="@+id/tv_data"
+            style="@style/TextStyle"
+            android:text="匹配 data 跳转"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_binder_aidl" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

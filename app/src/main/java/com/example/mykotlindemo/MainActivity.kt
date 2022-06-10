@@ -3,9 +3,9 @@ package com.example.mykotlindemo
 import android.content.ComponentName
 import android.content.Intent
 import android.content.ServiceConnection
+import android.net.Uri
 import android.os.Bundle
 import android.os.IBinder
-import android.os.IBinder.FIRST_CALL_TRANSACTION
 import android.os.Parcel
 import android.os.RemoteException
 import android.view.View
@@ -95,6 +95,12 @@ class MainActivity : AppCompatActivity() {
             intent.component = ComponentName("com.cc.skillapp","com.cc.skillapp.test.aidl.AidlService")
             bindService(intent,connAidl, BIND_AUTO_CREATE)
         }
+
+        mBinding.tvData.setOnClickListener {
+            var intent = Intent()
+            intent.setData(Uri.parse("cc://can3191:8888/niu"))
+            startActivity(intent)
+        }
     }
 
 
@@ -122,13 +128,12 @@ class MainActivity : AppCompatActivity() {
             var reply = Parcel.obtain()
             var result = 0
 
+            data.writeInterfaceToken("com.cc.skill.addbinder")
             data.writeInt(1111)
             data.writeInt(2223)
 
-            data.writeInterfaceToken("com.cc.skill.addbinder")
-
             try {
-                service?.transact(FIRST_CALL_TRANSACTION, data, reply, 0)
+                service?.transact(IBinder.FIRST_CALL_TRANSACTION, data, reply, 0)
                 result = reply.readInt()
             } catch (e: RemoteException) {
                 e.printStackTrace()

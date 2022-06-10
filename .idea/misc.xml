@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/activity_content_provider.xml" value="0.225" />
+        <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/activity_main.xml" value="0.19675925925925927" />
         <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/activity_test_one.xml" value="0.1" />
+        <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/activity_test_resolver.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/activity_view_pager.xml" value="0.23554301833568406" />
+        <entry key="..\:/Users/can/AndroidStudioProjects/MyKotlinDemo/app/src/main/res/layout/vp_demo_item.xml" value="0.1605769230769231" />
       </map>
     </option>
   </component>
