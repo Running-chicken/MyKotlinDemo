@@ -72,9 +72,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         mBinding.tvBroadcastReceiver.setOnClickListener{
-            val intent = Intent("com.cc.me.broadcast")
+            val intent = Intent("com.cc.skillapp.my.receiver")
             intent.putExtra("params", "im kt demo")
-            intent.component = ComponentName("com.cc.skillapp", "com.cc.skillapp.receive.MyBroadReceive")
+//            intent.component = ComponentName("com.cc.skillapp", "com.cc.skillapp.receive.MyBroadReceive")
+            intent.setPackage("com.cc.skillapp")
             sendBroadcast(intent)
         }
 

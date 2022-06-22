@@ -79,7 +79,7 @@
         <TextView
             android:id="@+id/tv_broadcast_receiver"
             style="@style/TextStyle"
-            android:text="broadcast_receiver"
+            android:text="发送静态广播"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_vp" />

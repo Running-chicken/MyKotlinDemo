@@ -16,5 +16,10 @@
             android:id="@+id/tv_query_all"
             style="@style/TextStyle"
             android:text="查询"/>
+
+        <TextView
+            android:id="@+id/tv_observer"
+            style="@style/TextStyle"
+            android:text="监听"/>
     </LinearLayout>
 </layout>
