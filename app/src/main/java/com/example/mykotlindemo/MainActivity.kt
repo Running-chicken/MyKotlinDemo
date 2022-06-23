@@ -6,8 +6,6 @@ import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Bundle
 import android.os.IBinder
-import android.os.Parcel
-import android.os.RemoteException
 import android.view.View
 import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +16,7 @@ import com.example.mykotlindemo.activity.ContentProviderActivity
 import com.example.mykotlindemo.activity.LambdaActivity
 import com.example.mykotlindemo.activity.ListActivity
 import com.example.mykotlindemo.databinding.ActivityMainBinding
+import com.example.mykotlindemo.entity.binder.MyBinder
 import com.example.mykotlindemo.utils.RouterPath
 import com.example.mykotlindemo.utils.Utils
 
@@ -125,24 +124,8 @@ class MainActivity : AppCompatActivity() {
 
     var conn = object : ServiceConnection{
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            var data = Parcel.obtain()
-            var reply = Parcel.obtain()
-            var result = 0
-
-            data.writeInterfaceToken("com.cc.skill.addbinder")
-            data.writeInt(1111)
-            data.writeInt(2223)
-
-            try {
-                service?.transact(IBinder.FIRST_CALL_TRANSACTION, data, reply, 0)
-                result = reply.readInt()
-            } catch (e: RemoteException) {
-                e.printStackTrace()
-            } finally {
-                data.recycle()
-                reply.recycle()
-            }
-            Utils.print("得到了：$result")
+            var myInterface = MyBinder.asInterface(service)
+            Utils.print("得到了：${myInterface.add(80,90)}")
 
 
 
